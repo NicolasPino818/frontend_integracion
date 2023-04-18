@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { productos } from 'src/app/modelos/models';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public showcart:boolean = false;
-
-  constructor() { }
+  public carrito = productos;
+  public total:number = 0;
+  constructor() {}
 
   ngOnInit(): void {
     /*
@@ -23,6 +25,15 @@ export class HeaderComponent implements OnInit {
       }
     })
     */
+
+    /* for (let index = 0; index < productos.length; index++) {
+      this.total += productos[index].data.precio;
+    } */
+
+    productos.forEach((e) => {
+      this.total += e.data.precio
+    });
+
   }
 
   menuHandler(){

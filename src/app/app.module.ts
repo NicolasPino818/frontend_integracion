@@ -12,6 +12,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { CuentaComponent } from './paginas/cuenta/cuenta.component';
 import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

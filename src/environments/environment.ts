@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  transbankBaseRoute:'https://transbank.cl/api',
+  musicproBaseRoute:'https://musicpro.cl/api',
 };
 
 /*

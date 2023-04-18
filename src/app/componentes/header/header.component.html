@@ -63,17 +63,17 @@
   <div class="cart-content">
     <h5 class="cart-title">Carrito</h5>
     <ul class="cart-item-list">
-      <li>
+      <li *ngFor="let cart of carrito">
         <div class="producto-container">
           <img
             class="producto-img"
             draggable="false"
-            src="/assets/img/guitarra-electroacustica-ltd-lxad100-ts-1108924-1.webp"
+            [src]="cart.fotoSRC"
             alt="prod"
           />
           <div>
-            <h6 class="producto-title">Guitarra</h6>
-            <span class="producto-price">$100.000</span>
+            <h6 class="producto-title">{{cart.tituloProd}}</h6>
+            <span class="producto-price">{{cart.data.precio}}</span>
           </div>
         </div>
 
@@ -81,15 +81,16 @@
           <span class="producto-delete"><i class="bx bx-trash"></i></span>
           <span class="producto-cant">
             <select name="" id="">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
+              <option value="1" [selected]=" cart.data.cantSelec == 1 ? 'selected' : false">1</option>
+              <option value="2" [selected]=" cart.data.cantSelec == 2 ? 'selected' : false">2</option>
+              <option value="3" [selected]=" cart.data.cantSelec == 3 ? 'selected' : false">3</option>
+              <option value="4" [selected]=" cart.data.cantSelec == 4 ? 'selected' : false">4</option>
+              <option value="5" [selected]=" cart.data.cantSelec == 5 ? 'selected' : false">5</option>
+              <option value="6" [selected]=" cart.data.cantSelec == 6 ? 'selected' : false">6</option>
+              <option value="7" [selected]=" cart.data.cantSelec == 7 ? 'selected' : false">7</option>
+              <option value="8" [selected]=" cart.data.cantSelec == 8 ? 'selected' : false">8</option>
+              <option value="9" [selected]=" cart.data.cantSelec == 9 ? 'selected' : false">9</option>
+              <option value="10" [selected]=" cart.data.cantSelec >= 10 ? 'selected' : false">10 o más</option>
             </select>
           </span>
         </div>
@@ -97,7 +98,7 @@
     </ul>
   </div>
   <div class="cart-total">
-    <p>Total: $100.000</p>
+    <p>Total: ${{total}}</p>
     <button class="checkout-btn" type="button">Finalizar Pago</button>
   </div>
 </div>
