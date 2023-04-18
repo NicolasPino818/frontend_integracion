@@ -9,6 +9,7 @@ import { productos } from 'src/app/modelos/models';
 export class HeaderComponent implements OnInit {
 
   public showcart:boolean = false;
+  public menuDetector:boolean = false;
   public carrito = productos;
   public total:number = 0;
   constructor() {}
@@ -42,7 +43,8 @@ export class HeaderComponent implements OnInit {
 
     menu_btn.classList.toggle('bx-menu');
     menu_btn.classList.toggle('bx-x');
-    menu.classList.toggle('open')
+    menu.classList.toggle('open');
+    this.menuDetector = !this.menuDetector;
   }
 
   menuClose(){
@@ -51,6 +53,7 @@ export class HeaderComponent implements OnInit {
     menu.classList.remove('open');
     menu_btn.classList.remove('bx-x');
     menu_btn.classList.add('bx-menu');
+    this.menuDetector = false;
   }
 
   toggleCart(){
