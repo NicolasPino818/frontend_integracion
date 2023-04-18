@@ -60,4 +60,9 @@ export class HeaderComponent implements OnInit {
     this.showcart = !this.showcart;
   }
 
+
+  updateCart(){
+    
+  }
+
 }
