@@ -1,1 +1,103 @@
-<p>header works!</p>
+<div id="header" class="navbar">
+  <a class="logo-link" (click)="menuClose()" [routerLink]="['home']">
+    <img
+      class="logo"
+      draggable="false"
+      src="/assets/logo/logo2.png"
+      alt="inovisoft logo"
+    />
+  </a>
+
+  <div class="nav-wrapper">
+    <nav class="navbar-menu">
+      <button class="dropdown-btn" (click)="menuHandler()">
+        <i id="menuToggler" class="bx bx-menu"></i>
+      </button>
+
+      <ul id="menu-list" class="menu-item-list">
+        <li
+          class="menu-item"
+          (click)="menuClose()"
+          [routerLink]="['home']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </li>
+        <li
+          class="menu-item"
+          (click)="menuClose()"
+          [routerLink]="['categoria']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Categoria
+        </li>
+        <li
+          class="menu-item"
+          (click)="menuClose()"
+          [routerLink]="['tiendas']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Tiendas
+        </li>
+        <li
+          class="menu-item"
+          (click)="menuClose()"
+          [routerLink]="['cuenta']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="bx bx-user"></i>
+        </li>
+      </ul>
+      <span class="cart-btn" (click)="toggleCart()">
+        <i class="bx bx-cart"></i>
+      </span>
+    </nav>
+  </div>
+</div>
+<div *ngIf="showcart" class="cart-container">
+  <div class="cart-header" (click)="toggleCart()"><i class="bx bx-x"></i></div>
+  <div class="cart-content">
+    <h5 class="cart-title">Carrito</h5>
+    <ul class="cart-item-list">
+      <li>
+        <div class="producto-container">
+          <img
+            class="producto-img"
+            draggable="false"
+            src="/assets/img/guitarra-electroacustica-ltd-lxad100-ts-1108924-1.webp"
+            alt="prod"
+          />
+          <div>
+            <h6 class="producto-title">Guitarra</h6>
+            <span class="producto-price">$100.000</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="producto-delete"><i class="bx bx-trash"></i></span>
+          <span class="producto-cant">
+            <select name="" id="">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="cart-total">
+    <p>Total: $100.000</p>
+    <button class="checkout-btn" type="button">Finalizar Pago</button>
+  </div>
+</div>

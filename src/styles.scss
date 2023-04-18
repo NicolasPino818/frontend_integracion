@@ -1,1 +1,194 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+:root{
+
+    --color-primary: #8c52ff;
+    --color-contrast: rgb(60, 60, 59);
+    --color-contrast-o07: rgba(60, 60, 59, 0.7);
+    --color-primary-o07: rgba(140, 82, 255, 0.7);
+
+    --color-secondary: #334e78;
+
+    --color-light: #ffffff;
+
+    /* Navbar variables */
+    --navbar-bg: var(--color-secondary);
+    --navbar-mobile: var(--color-secondary);
+    --navbar-menu-item-bg: red;
+
+    --nav-item-color: #ffffff;
+    --nav-item-color-mobile: #000000;
+
+    /* whatsapp chat variables */
+    --whatsapp-color-lightgreen:#25D366;
+    --whatsapp-color-blue:#34B7F1;
+    --whatsapp-color-lightblue:#5dc2ed;
+    --whatsapp-color-tealGreen:#128C7E;
+    --whatsapp-color-tealGreenDark:#075E54;
+    --whatsapp-gradient-bg: linear-gradient(45deg, #00c6b8,#35f7ea,#00c6b8);
+    --whatsapp-container-bg:#ededed;
+    --whatsapp-icon-color: #fff;
+
+    /* Logos urls */
+    --site-logo1: url('/assets/logo/MUSIC PRO.png');
+    --site-logo2: url('/assets/logo/MUSIC PRO 2.png');
+}
+
+
+body{
+    margin: 0;
+}
+
+/* Grid */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-width: 260px;
+}
+
+.container-full{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    gap: 5px;
+}
+
+.vh-100{
+    min-height: 100vh;
+}
+
+.vh-75{
+    min-height: 75vh;
+}
+
+.vh-50{
+    min-height: 50vh;
+}
+
+.vh-25{
+    min-height: 25vh;
+}
+
+.margin-none{
+    margin: 0;
+}
+
+.padding-none{
+    padding: 0;
+}
+
+
+/* Seccion formularios */
+form{
+    flex-grow: 1;
+    border: 1px solid black;
+    max-width: 600px;
+    padding: 10px;
+    .form-row{
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    
+    .form-col{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .input-container{
+        display: flex;
+        gap: 5px;
+        &.stacked{
+            flex-direction: column;
+        }
+    }
+
+    .submit{
+        border: none;
+        padding: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+
+        &.full{
+            width: 100%;
+        }
+    }
+}
+
+
+/* Flex */
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.align-items-start{
+    align-items: start;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.align-items-end{
+    align-items: end;
+}
+
+.align-items-start{
+    align-items: start;
+}
+
+.align-self-end{
+    align-items: flex-end;
+}
+
+.justify-self-end{
+    justify-self: end;
+}
+
+.gap-none{
+    gap: 0;
+}
+
+/* Fuentes */
+
+.fs-40{
+    font-size: 40px;
+}
+
+.fs-60{
+    font-size: 60px;
+}
+
+.fs-25{
+    font-size: 25px;
+}
+
+.text-center{
+    text-align: center;
+}

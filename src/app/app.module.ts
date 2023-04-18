@@ -11,6 +11,7 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { CuentaComponent } from './paginas/cuenta/cuenta.component';
+import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CuentaComponent } from './paginas/cuenta/cuenta.component';
     CarritoComponent,
     FooterComponent,
     HeaderComponent,
-    CuentaComponent
+    CuentaComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
