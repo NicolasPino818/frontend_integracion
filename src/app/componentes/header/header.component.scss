@@ -1,6 +1,7 @@
 .navbar{
     z-index: 99999999;
     display: flex;
+    box-sizing: border-box;
     align-items: center; 
     justify-content: space-between;
     flex-wrap: wrap;
@@ -45,6 +46,7 @@
         }
 
         .menu-item-list{
+            
             display: inherit;
             flex-direction: inherit;
             align-items: inherit;
@@ -57,10 +59,7 @@
                 cursor: pointer;
                 padding: 5px;
                 position: relative;
-                
             }
-
-            
         }
     }
     

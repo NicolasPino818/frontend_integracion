@@ -1,3 +1,36 @@
-p{
-    height: 1000px;
+.footer{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-light);
+    div{
+        flex-grow: 1;
+    }
+
+    min-height: 400px;
+    
+    background: var(--color-secondary);
+    .footer-logo{
+        cursor: pointer;
+        max-width: 60%;
+    }
+
+    .copyright{
+        
+        padding: 15px;
+        background: #00000042;
+    }
+}
+
+@media only screen and (min-width: 1px) {
+}
+
+@media only screen and (min-width: 992px) {
+
+    .footer {
+        .col{
+            max-width: 30%;
+        }
+    }
+    
+    
 }
