@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       this.total += productos[index].data.precio;
     } */
 
-    //this.cart.addItem(productos[2]);
+    this.cart.addItem(productos[1]);
 
   }
 
