@@ -80,12 +80,14 @@
           />
           <div>
             <h6 class="producto-title">{{ cart.tituloProd }}</h6>
-            <span class="producto-price">{{ cart.data.precio }}</span>
+            <span class="producto-price">${{ cart.data.precio }}</span>
           </div>
         </div>
 
         <div>
-          <span class="producto-delete"><i class="bx bx-trash"></i></span>
+          <span class="producto-delete" (click)="deleteItem(cart.id)"
+            ><i class="bx bx-trash"></i
+          ></span>
           <span class="producto-cant">
             <select name="" id="">
               <option

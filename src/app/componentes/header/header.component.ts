@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ICarritoItem } from 'src/app/interfaces/interfaces';
 import { productos } from 'src/app/modelos/models';
+import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +12,9 @@ export class HeaderComponent implements OnInit {
 
   public showcart:boolean = false;
   public menuDetector:boolean = false;
-  public carrito = productos;
+  public carrito:ICarritoItem[] = [];
   public total:number = 0;
-  constructor() {}
+  constructor(private cart:CarritoService) {}
 
   ngOnInit(): void {
     /*
@@ -31,9 +33,7 @@ export class HeaderComponent implements OnInit {
       this.total += productos[index].data.precio;
     } */
 
-    productos.forEach((e) => {
-      this.total += e.data.precio
-    });
+    //this.cart.addItem(productos[2]);
 
   }
 
@@ -58,11 +58,32 @@ export class HeaderComponent implements OnInit {
 
   toggleCart(){
     this.showcart = !this.showcart;
+    if(this.showcart) this.getCartItems();
+    
   }
 
 
   updateCart(){
+
+  }
+
+  getCartItems(){
+    this.carrito = [];
+    this.total = 0;
+    
+    this.carrito = this.cart.getItems();
+    if(this.carrito){
+      this.carrito.forEach((e) => {
+        this.total += e.data.precio * e.data.cantSelec;
+      });
+    }
     
   }
+
+  deleteItem(id:number){
+    this.cart.deleteItem(id).then(()=>{
+      this.getCartItems();
+    });
+  } 
 
 }
