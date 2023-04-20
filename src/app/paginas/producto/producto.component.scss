@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+.container{
+    margin-top: 40px;
+}
+img{
+    height: 400px;
+    width: 400px;
+}
+
+.desRight{
+    max-width: 100px;
+
+}
+
+.half-60{
+    max-width: 60%; 
+    
+}
+.half-40{
+    max-width: 40%; 
+  
+}
+
+h4,p,h1{
+    margin: 0;
+    font-family:'poppins';
+}
+.flex{
+    display: flex;
+}
+span p{
+    display:contents;
+    color: var(--color-secondary);
+    
+}
+.bx-star{
+    color:#F8DC04;
+}
+hr{
+   display: block;
+}
+h4,h1,a{
+    color: var(--color-secondary);
+}
+
+.precio{
+    font-size: 40px;
+}
+button{
+    border-radius: 20px;
+    background-color: #7DDAF8 ;
+    border: 2px solid var(--color-secondary);
+    height: 35px;
+    width: 200px;
+}
+div h1{
+    margin-bottom: 10px;
+}
+.space{
+    margin-top: 50px;
+}
+.credit-card{
+   
+}
