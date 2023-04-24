@@ -26,7 +26,7 @@ const routes: Routes = [
     title: SiteName + ' - ' +'Categoria'
   },
   {
-    path: 'producto',
+    path: 'producto/:id',
     component: ProductoComponent,
     title: SiteName + ' - ' +'Producto'
   },

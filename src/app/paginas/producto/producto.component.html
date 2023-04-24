@@ -3,15 +3,11 @@
 <section>
     <div class="row sm-bp ">
             <div class="half-60 col align-items-center">
-                <img  class="product-foto" src="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit" alt="">
+                <img  class="product-foto" [src]="productos.fotoSRC" alt="">
                 <div class=" space-50">
                     <div class="descripcion">
                         <h1>DESCRIPCIÓN DEL PRODUCTO</h1>
-                        <p>La Takamine GC1 es una atractiva guitarra acústica clásica construida para ofrecer un hermoso sonido de cuerdas de nylon.</p>
-                        <br>
-                        <p> Una excelente opción para cualquier músico que busque una guitarra clásica asequible que funcione muy por encima de su precio, la GC1 cuenta con una tapa de abeto selecta reforzada con aros y fondo de caoba para un sonido completo y equilibrado. El cómodo mástil de caoba y el diapasón de laurel proporcionan una gran sensación y facilidad de ejecución.</p>
-                        <br>
-                        <p>Otras excelentes características incluyen una articulación de cuello de cola de milano, una hermosa roseta de mosaico con incrustaciones, una cejilla de hueso sintético y una montura de puente, un headstock de laurel, clavijas de cromo con botones de perlas blancas y un elegante acabado brillante.</p>
+                        <p>{{productos.data.desc}}</p>
                     </div>
                     <div class="space-50 ficha">
                         <h1>FICHA TÉCNICA Y DIMENSIONES</h1>
@@ -28,12 +24,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>Natural (NAT)</td>
-                                <td>19</td>
-                                <td>Takamine</td>
-                                <td>Caoba (fondo y lados)</td>
-                                <td>Spruce</td>
-                                <td>Laurel</td>
+                                <td >{{productos.data.ficha.color}}</td>
+                                <td >{{productos.data.ficha.trastes}}</td>
+                                <td >{{productos.data.ficha.marca}}</td>
+                                <td >{{productos.data.ficha.matCuerpo}}</td>
+                                <td >{{productos.data.ficha.matNeck}}</td>
+                                <td >{{productos.data.ficha.matFinger}}</td>
                               </tr>
                             </tbody>
                         </table>
@@ -42,7 +38,7 @@
             </div>
             <div class="half-40 col sticky space-30">
                 <img class="phidden" src="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit" alt="">
-                <h4>LES PAUL STANDARD 50s GUITARRA ELECTRICA LEMON BURST EPIPHONE</h4>
+                <h4>{{productos.tituloProd}}</h4>
                 <p>Epiphone</p>
                 <span class=" flex align-items-center "> 
                     <i class='bx bx-star'></i>
@@ -53,9 +49,10 @@
                     <p>(0)</p>
                 </span>
                 
-                <a href="http://">*Ver reviews</a>
+                <a>*Ver reviews</a>
                 <hr>
-                <h1 class="precio">$550.000</h1>
+                <span>Stock: {{productos.data.stockT}} unidad/es</span>
+                <h1 class="precio">${{productos.data.precio}}</h1>
                 <hr>
                 <div class="flex align-items-center justify-content-end">
                     <button>Protege tu instrumento ></button>
