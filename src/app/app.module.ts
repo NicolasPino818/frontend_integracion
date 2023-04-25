@@ -13,6 +13,8 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { CuentaComponent } from './paginas/cuenta/cuenta.component';
 import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './paginas/login/login.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HeaderComponent,
     CuentaComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

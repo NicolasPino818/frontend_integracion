@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IProductoItem } from 'src/app/interfaces/interfaces';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,11 +9,13 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiMusicProService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+  }
 
 
-  apiTransbank(){
-    //return this.http.put(`${environment.transbankBaseRoute}/venta`);
+  getProducto(id:number): Observable<IProductoItem> | string{
+    return  '';//this.http.get(`${environment.musicproBaseRoute}/producto/${id}`,);
   }
 
 

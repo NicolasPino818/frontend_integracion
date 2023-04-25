@@ -6,6 +6,8 @@ import { ProductoComponent } from './paginas/producto/producto.component';
 import { TiendasComponent } from './paginas/tiendas/tiendas.component';
 import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.component';
 import { CuentaComponent } from './paginas/cuenta/cuenta.component';
+import { LoginComponent } from './paginas/login/login.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
 
 const SiteName = 'Music Pro';
 
@@ -26,7 +28,7 @@ const routes: Routes = [
     title: SiteName + ' - ' +'Categoria'
   },
   {
-    path: 'producto',
+    path: 'producto/:id',
     component: ProductoComponent,
     title: SiteName + ' - ' +'Producto'
   },
@@ -39,6 +41,16 @@ const routes: Routes = [
     path: 'cuenta',
     component: CuentaComponent,
     title: SiteName + ' - ' +'Cuenta'
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: SiteName + ' - ' +'Login'
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent,
+    title: SiteName + ' - ' +'Registro'
   },
   {
     path: '**',

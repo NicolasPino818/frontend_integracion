@@ -24,9 +24,6 @@ export class CarritoService {
 
   addItem(item:ICarritoItem){
     let jsonString = localStorage.getItem(CARRITO_KEY);
-
-    console.log(jsonString);
-
     if(jsonString){
       this.productos = JSON.parse(jsonString);
 
@@ -36,17 +33,20 @@ export class CarritoService {
           i.data.cantSelec += item.data.cantSelec;
           localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
           found = true;
+          alert('Producto añadido al carrito');
         }
       });
 
       if (!found){
         this.productos.push(item);
         localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
+        alert('Producto añadido al carrito');
       }
 
       found = false;
 
     }else{
+
       this.productos.push(item);
       localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
       
@@ -55,15 +55,7 @@ export class CarritoService {
 
   }
 
-  updateItem(){
-
-  }
-
   updateItems(){
-
-  }
-
-  deleteItems(){
 
   }
 
