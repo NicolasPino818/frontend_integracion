@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICarritoItem } from 'src/app/interfaces/interfaces';
-import { productos } from 'src/app/modelos/models';
+import { producto } from 'src/app/modelos/models';
 import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
@@ -32,8 +32,6 @@ export class HeaderComponent implements OnInit {
     /* for (let index = 0; index < productos.length; index++) {
       this.total += productos[index].data.precio;
     } */
-
-    this.cart.addItem(productos[1]);
 
   }
 

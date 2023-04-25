@@ -117,7 +117,7 @@ export const productos = [
 export const producto: IProductoItem[] = [
 
     {
-        id: 1123132,
+        id: 1,
         fotoSRC: 'https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit',
         tituloProd: 'LES PAUL STANDARD 50s GUITARRA ELECTRICA LEMON BURST EPIPHONE',
         data:
@@ -136,7 +136,7 @@ export const producto: IProductoItem[] = [
             }
     },
     {
-        id: 1123133,
+        id: 2,
         fotoSRC: 'https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit',
         tituloProd: 'GUITARRA ELECTRICA 1',
         data:
@@ -155,7 +155,7 @@ export const producto: IProductoItem[] = [
             }
     },
     {
-        id: 1123134,
+        id: 3,
         fotoSRC: 'https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit',
         tituloProd: 'GUITARRA ELECTRICA 2',
         data:
@@ -174,7 +174,7 @@ export const producto: IProductoItem[] = [
             }
     },
     {
-        id: 1123135,
+        id: 4,
         fotoSRC: 'https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit',
         tituloProd: 'GUITARRA ELECTRICA 3',
         data:
