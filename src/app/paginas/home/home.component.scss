@@ -1,3 +1,47 @@
+.carousel-item {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.carousel-indicators li {
+  background-color: #bbb;
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 30px;
+  height: 30px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
 .producto-container{
     text-align: center;
     width: 30%;
@@ -26,3 +70,4 @@
     height: 20px;
     border-radius: 50%;
 }
+
