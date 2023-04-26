@@ -15,6 +15,7 @@ import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.c
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
+import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegistroComponent } from './paginas/registro/registro.component';
     CuentaComponent,
     NotFoundPageComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    CarritoAlertComponent
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,4 @@
 
-interface ICarritoItemData{
-    stockT: number,
-    cantSelec: number,
-    precio: number
-}
-
-export interface ICarritoItem{
-    id: number,
-    fotoSRC: string,
-    tituloProd: string,
-    data: ICarritoItemData
-}
-
 interface IProductoFicha{
     color: string,
     trastes: string,
@@ -23,9 +10,10 @@ interface IProductoFicha{
 
 interface IProductoData{
     stockT: number,
-    desc: string,
+    desc?: string,
     precio: number,
-    ficha: IProductoFicha
+    ficha?: IProductoFicha,
+    cantSelec?: number,
 }
 
 export interface IProductoItem{

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICarritoItem } from 'src/app/interfaces/interfaces';
-import { producto } from 'src/app/modelos/models';
 import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,28 +7,15 @@ import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public showcart:boolean = false;
+  public showcart:boolean = true;
   public menuDetector:boolean = false;
-  public carrito:ICarritoItem[] = [];
-  public total:number = 0;
-  constructor(private cart:CarritoService) {}
+  constructor(private cart:CarritoService) {
+    this.cart.getCartStateAsObservable().subscribe((state)=>{
+      this.showcart = state;
+    });
+  }
 
   ngOnInit(): void {
-    /*
-    window.addEventListener('scroll',()=>{
-      const scrolled = window.scrollY;
-      const header = <HTMLDivElement>document.getElementById('header');
-      if(!header.classList.contains('scrolled') && scrolled >= 50){
-        header.classList.add('scrolled');
-      }else if(header.classList.contains('scrolled') && scrolled < 50){
-        header.classList.remove('scrolled');
-      }
-    })
-    */
-
-    /* for (let index = 0; index < productos.length; index++) {
-      this.total += productos[index].data.precio;
-    } */
 
   }
 
@@ -55,33 +39,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleCart(){
-    this.showcart = !this.showcart;
-    if(this.showcart) this.getCartItems();
-    
+    this.cart.toggleCart();
   }
-
-
-  updateCart(){
-
-  }
-
-  getCartItems(){
-    this.carrito = [];
-    this.total = 0;
-    
-    this.carrito = this.cart.getItems();
-    if(this.carrito){
-      this.carrito.forEach((e) => {
-        this.total += e.data.precio * e.data.cantSelec;
-      });
-    }
-    
-  }
-
-  deleteItem(id:number){
-    this.cart.deleteItem(id).then(()=>{
-      this.getCartItems();
-    });
-  } 
 
 }
