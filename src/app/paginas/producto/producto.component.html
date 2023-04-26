@@ -1,162 +1,129 @@
-
+<app-carrito-alert *ngIf="ShowAddToCart"></app-carrito-alert>
 <main>
-<section>
-    <div class="row sm-bp ">
-            <div class="half-60 col align-items-center">
-                <img  class="product-foto" [src]="productos.fotoSRC" alt="">
-                <div class=" space-50">
-                    <div class="descripcion">
-                        <h1>DESCRIPCIÓN DEL PRODUCTO</h1>
-                        <p>{{productos.data.desc}}</p>
-                    </div>
-                    <div class="space-50 ficha">
-                        <h1>FICHA TÉCNICA Y DIMENSIONES</h1>
-                        <table class="flex justify-content-between">
-                            <thead>
-                              <tr>
-                                <th >Color</th>
-                                <th >Trastes</th>
-                                <th >Marca</th>
-                                <th >Material cuerpo</th>
-                                <th >Material neck</th>
-                                <th >Material fingerboard</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td >{{productos.data.ficha.color}}</td>
-                                <td >{{productos.data.ficha.trastes}}</td>
-                                <td >{{productos.data.ficha.marca}}</td>
-                                <td >{{productos.data.ficha.matCuerpo}}</td>
-                                <td >{{productos.data.ficha.matNeck}}</td>
-                                <td >{{productos.data.ficha.matFinger}}</td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>           
-                </div>
+  <section>
+    <div class="row sm-bp">
+      <div class="half-60 col align-items-center">
+        <img class="product-foto" [src]="productos.fotoSRC" alt="" />
+        <div class="space-50">
+          <div class="descripcion">
+            <h1>DESCRIPCIÓN DEL PRODUCTO</h1>
+            <p>{{ productos.data.desc }}</p>
+          </div>
+          <div class="space-50 ficha">
+            <h1>FICHA TÉCNICA Y DIMENSIONES</h1>
+            <table class="flex justify-content-between">
+              <thead>
+                <tr>
+                  <th>Color</th>
+                  <th>Trastes</th>
+                  <th>Marca</th>
+                  <th>Material cuerpo</th>
+                  <th>Material neck</th>
+                  <th>Material fingerboard</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ productos.data.ficha.color }}</td>
+                  <td>{{ productos.data.ficha.trastes }}</td>
+                  <td>{{ productos.data.ficha.marca }}</td>
+                  <td>{{ productos.data.ficha.matCuerpo }}</td>
+                  <td>{{ productos.data.ficha.matNeck }}</td>
+                  <td>{{ productos.data.ficha.matFinger }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="half-40 col sticky space-30">
+        <img class="phidden" [src]="productos.fotoSRC" alt="" />
+        <h4>{{ productos.tituloProd }}</h4>
+        <p>{{ productos.data.ficha.marca }}</p>
+        <span class="flex align-items-center">
+          <i class="bx bx-star"></i>
+          <i class="bx bx-star"></i>
+          <i class="bx bx-star"></i>
+          <i class="bx bx-star"></i>
+          <i class="bx bx-star"></i>
+          <p>(0)</p>
+        </span>
+
+        <a>*Ver reviews</a>
+        <hr />
+        <span>Stock: {{ productos.data.stockT }} unidad/es</span>
+        <input
+          id="cantidad_inp"
+          class="cant-input"
+          type="number"
+          [max]="productos.data.stockT"
+          min="0"
+          [value]="productos.data.stockT == 0 ? 0 : 1"
+        />
+        <h1 class="precio">${{ productos.data.precio | number : "1.0-0" }}</h1>
+        <hr />
+        <div class="flex align-items-center justify-content-end">
+          <button>Protege tu instrumento ></button>
+        </div>
+        <div class="desplegable">
+          <span class="flex justify-content-between space-30">
+            <div class="flex align-items-center">
+              <i class="bx bx-credit-card"></i>
+              <p>Conoce más cuotas sin interés</p>
             </div>
-            <div class="half-40 col sticky space-30">
-                <img class="phidden" src="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit" alt="">
-                <h4>{{productos.tituloProd}}</h4>
-                <p>Epiphone</p>
-                <span class=" flex align-items-center "> 
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <p>(0)</p>
-                </span>
-                
-                <a>*Ver reviews</a>
-                <hr>
-                <span>Stock: {{productos.data.stockT}} unidad/es</span>
-                <input id="cantidad_inp" class="cant-input" type="number" [max]="productos.data.stockT" min="0" value="0">
-                <h1 class="precio">${{productos.data.precio}}</h1>
-                <hr>
-                <div class="flex align-items-center justify-content-end">
-                    <button>Protege tu instrumento ></button>
-                </div>
-                <div class="desplegable">
-                    <span class="flex justify-content-between space-30">
-                        <div class="flex align-items-center">
-                            <i class='bx bx-credit-card'></i>
-                            <p>Conoce más cuotas sin interés</p>
-                        </div>
-                        <div>
-                            <i class='bx bxs-chevron-right'></i>
-                        </div>
-                    </span>
-                    <div class="hidden"><p>Texto escondido</p></div>
-                </div>
-                <hr>
-                <div class="desplegable">
-                    <span class="flex justify-content-between">
-                        <div class="flex align-items-center">
-                            <i class='bx bxs-truck'></i>
-                            <p>Calculador de despachos</p>
-                        </div>
-                        <div>
-                        <i class='bx bxs-chevron-right'></i>
-                        </div>
-                    </span>
-                        <div class="hidden"><p>Texto escondido</p></div>
-                    <hr>
-                </div>
-                <div class="contents">
-                    <button (click)="addToCart()"><i class='bx bx-cart'></i>Agregar al carro</button>
-                    <br>
-                    <button>Ver stock de tiendas</button>
-                </div>
+            <div>
+              <i class="bx bxs-chevron-right"></i>
             </div>
+          </span>
+          <div class="hidden"><p>Texto escondido</p></div>
+        </div>
+        <hr />
+        <div class="desplegable">
+          <span class="flex justify-content-between">
+            <div class="flex align-items-center">
+              <i class="bx bxs-truck"></i>
+              <p>Calculador de despachos</p>
+            </div>
+            <div>
+              <i class="bx bxs-chevron-right"></i>
+            </div>
+          </span>
+          <div class="hidden"><p>Texto escondido</p></div>
+          <hr />
+        </div>
+        <div class="contents">
+          <button (click)="addToCart()">
+            <i class="bx bx-cart"></i>Agregar al carro
+          </button>
+          <br />
+          <button>Ver stock de tiendas</button>
+        </div>
+      </div>
     </div>
     <div class="masProd flex align-items-center space-50">
-        <h1>RECOMENDACIONES</h1>
-        
-            <span class="flex gap">
-                <h3>Productos similares</h3>
-                <h3>Productos complementarios</h3>
-            </span>
-                
-        <div class="row colection space-50 justify-content-center">
-            
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/167408-800-auto?v=637801427776200000&width=800&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
+      <h1>RECOMENDACIONES</h1>
 
-            </div>
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/177047-800-auto?v=637859820176400000&width=800&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
-
-            </div>
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/177178-1200-auto?v=637859849818870000&width=1200&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
-
-            </div>
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/169410-800-auto?v=637801434886900000&width=800&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
-
-            </div>
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/174872-800-auto?v=637828689097900000&width=800&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
-
-            </div>
-            <div>
-                <img src="https://audiomusicacl.vtexassets.com/arquivos/ids/179987-1200-auto?v=638001689047500000&width=1200&height=auto&aspect=true" alt="">
-                <h4>Guitarra Eléctrica</h4>
-                <hr>
-                LTD
-                <H3>$207.000</H3>
-                <h5><del>$227.000</del></h5>
-
-            </div>
+      <span class="flex gap">
+        <h3>Productos similares</h3>
+        <h3>Productos complementarios</h3>
+      </span>
+      <div class="row colection space-50 justify-content-center">
+        <div
+          *ngFor="let relacionado of relacionados"
+          [routerLink]="['/producto/' + relacionado.id]"
+        >
+          <img
+            [src]="relacionado.fotoSRC"
+            alt="Foto producto"
+            draggable="false"
+          />
+          <h4>{{ relacionado.tituloProd }}</h4>
+          <hr />
+          {{ relacionado.data.ficha.marca }}
+          <H3>{{ relacionado.data.precio | number : "1.0-0" }}</H3>
+          <h5><del>$227.000</del></h5>
         </div>
-    </div> 
-    <br><br><br> 
-</section>
+      </div>
+    </div>
+  </section>
 </main>

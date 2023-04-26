@@ -1,0 +1,40 @@
+.modal-wrapper{
+    /* position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%); */
+
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.modal-wrapper .modal-container{
+    display: inherit;
+    background: #25D366;
+    padding: 10px;
+    margin: 15px 0;
+    gap: 15px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.modal-wrapper .modal-container .modal-title{
+    font-size: 1rem;
+    margin: 0;
+}
+
+.modal-wrapper .modal-container .modal-btn{
+    height: fit-content;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: var(--color-light);
+    padding: 15px;
+    border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    
+}

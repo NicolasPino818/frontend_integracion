@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ICarritoItem } from 'src/app/interfaces/interfaces';
+import { BehaviorSubject } from 'rxjs';
+import { IProductoItem } from 'src/app/interfaces/interfaces';
 
 const CARRITO_KEY = 'CARRITO';
 
@@ -8,8 +9,36 @@ const CARRITO_KEY = 'CARRITO';
 })
 export class CarritoService {
 
-  private productos: ICarritoItem[] = [];
+  private productos: IProductoItem[] = [];
+  private cartState: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   constructor() { }
+
+
+  toggleCart(){
+    this.setCartState(!this.getCartState());
+  }
+
+  openCart(){
+    this.setCartState(true);
+  }
+
+  closeCart(){
+    this.setCartState(false);
+  }
+
+
+  getCartStateAsObservable(){
+    return this.cartState.asObservable();
+  }
+
+  getCartState(){
+    return this.cartState.value;
+  }
+
+  setCartState(bool:boolean){
+    this.cartState.next(bool);
+  }
 
 
   getItems(){
@@ -22,7 +51,7 @@ export class CarritoService {
     }
   }
 
-  addItem(item:ICarritoItem){
+  addItem(item:IProductoItem){
     let jsonString = localStorage.getItem(CARRITO_KEY);
     if(jsonString){
       this.productos = JSON.parse(jsonString);
@@ -30,17 +59,17 @@ export class CarritoService {
       let found = false;
       this.productos.forEach((i)=>{
         if (i.id == item.id) {
-          i.data.cantSelec += item.data.cantSelec;
-          localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
+          if(i.data.cantSelec < item.data.stockT){
+            i.data.cantSelec += item.data.cantSelec;
+            localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
+          }
           found = true;
-          alert('Producto añadido al carrito');
         }
       });
 
       if (!found){
         this.productos.push(item);
         localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
-        alert('Producto añadido al carrito');
       }
 
       found = false;
@@ -49,14 +78,24 @@ export class CarritoService {
 
       this.productos.push(item);
       localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
-      
     }
     this.productos = [];
 
   }
 
-  updateItems(){
+  updateItems(items: IProductoItem[]){
 
+    items.forEach((item)=>{
+      if(item.data.cantSelec == 0){
+        items = items.filter((prod)=>{
+          return prod.id != item.id;
+        })
+      }
+    })
+
+    if(items.length > 0) localStorage.setItem(CARRITO_KEY, JSON.stringify(items));
+    else localStorage.removeItem(CARRITO_KEY);
+    
   }
 
   deleteItem(id:number){

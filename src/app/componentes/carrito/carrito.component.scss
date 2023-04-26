@@ -1,0 +1,120 @@
+
+.cart-detector{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999998;
+    background-color: #20202047;
+}
+
+.cart-container{
+    display: flex;
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 270px;
+    width: 90vw;
+    max-width: 300px;
+    background-color: #f3f3f3;
+    flex-direction: column;
+    padding: 15px;
+    border-left: 1px solid darkgray;
+    box-sizing: border-box;
+    animation: openCart 250ms forwards linear;
+    .cart-header{
+        cursor: pointer;
+        align-self: flex-end;
+        
+        i{
+            
+            font-size: 30px;
+        }
+    }
+    .cart-title{
+        text-align: center;
+        color: #202020;
+        text-transform: uppercase;
+        font-size: 25px;
+        margin: 5px;
+        border-bottom: 1px solid black;
+    }
+
+    .cart-content{
+        flex-grow: 1;
+        overflow: auto;
+        
+        .cart-item-list{
+            list-style: none;
+            padding: 0;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            li{
+                display: flex;
+                gap: 5px;
+                justify-content: space-around;
+                border-bottom: 1px solid black;
+                .producto-container{
+                    display: flex;
+                    gap: 3px;
+                    flex-grow: 1;
+                    .producto-img{
+                        width: 50px;
+                        height: 50px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        margin: 0;
+                        padding: 0;
+                        object-fit: contain;
+                    }
+                    .producto-title{
+                        margin: 0;
+                        font-size: 1.1rem;
+                        
+                    }
+                }
+                .producto-price{
+                    margin: 0;
+                }
+                .producto-delete{
+                    cursor: pointer;
+                    font-size: 20px;
+                    display: block;
+                    margin: 0;
+                }
+                .producto-cant{
+                    display: block;
+                    margin: 0;
+
+                    select{
+                        max-width: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart-total{
+        border-top: 1px solid black;
+        overflow: auto;
+        min-height: 25%;
+
+        .btn-container{
+            display: flex;
+            justify-content: space-evenly;
+            gap: 5px;
+            flex-wrap: wrap;
+            .btn{
+                cursor: pointer;
+                background: var(--color-primary);
+                color: var(--color-light);
+                padding: 15px;
+                border: none;
+            }
+        }
+    }
+}
