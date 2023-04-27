@@ -1,0 +1,39 @@
+
+input{
+    min-width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1.5px solid #38A6E7;
+    margin: 10px
+}
+form{
+    max-width: 400px;
+    max-height: 500px;
+    border-radius: 20px;
+    margin: 30px;
+    text-align: center;
+    border: 2px solid var(--color-secondary);
+    background-color: white;
+}
+input::placeholder{
+    text-align: center;
+}
+button{
+    width: 200px;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    font-size: 20px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+.bxs-user-circle{
+    font-size: 100px ;
+    color: var(--color-secondary);
+}
+main{
+    background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1510/Electric_guitar_shop-Music_HD_Wallpaper_1366x768.jpg');
+}
+

@@ -1,0 +1,144 @@
+
+img{
+    max-width: 800px;
+    height: 530px;
+    border-radius: 0 30px 30px 0;
+    
+}
+.contenedor1{
+    width: 55%;
+
+}
+.contenedor2{
+    width: 45%;
+    justify-content: center;
+    padding: 50px 0 50px 0px; 
+    
+}
+
+.boton1{
+    width: 220px;
+    height: 70px;
+    border-radius: 20px;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+.block{
+    display: block;
+}
+input{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1.5px solid #38A6E7;
+   
+}
+
+
+input::placeholder{
+    text-align: center;
+    color: #38A6E7;
+}
+input:focus{
+    border: 1.5px solid green ;
+    outline: none;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.gap-40{
+    gap: 40px;
+    margin-top: 50px;
+}
+.bxs-check-circle{
+    color: lightgreen;
+    font-size: 30px;
+}
+.gap-40 div{
+    flex-direction:row;
+}
+.contenedor2 div .bx-plus-medical{
+    font-size: 20px;
+    color: green;
+    padding-left: 10px;
+}
+.a{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(250%, -280%) scale(2.5);
+    font-size: 30px;
+    color: rgb(1, 213, 1) !important; 
+}
+p,a{
+    color: #38A6E7;
+    
+}
+.text2{
+    margin-top: 50px;
+   
+}
+.boton2{
+    display: block;
+    width: 200px;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    background: var(--color-secondary);
+    color: white;
+    font-size: 20px;
+    margin: 20px auto;
+    cursor: pointer;
+
+}
+.text1{
+    position: absolute;
+    background-color: #38A6E7;
+    top: 0;
+    left: 0;
+    transform: translate(30%, 30%);
+    width: 94px;
+    height: 100px;
+    border-radius: 8px;
+
+  
+}
+.text1 p{
+    color: white;
+    padding-left: 10px;
+    text-align: left;
+    
+}
+.bxs-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(710%, 650%);
+    color: #F892B0;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .contenedor1{
+        display: none;
+
+    }
+
+    .contenedor2{
+        background-image: url('/assets/imagendoctor1.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+   
+   
+}
