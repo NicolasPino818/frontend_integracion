@@ -13,18 +13,19 @@
 
 .banner_img{
     width: 100%;
-    object-position: center top;
+    object-position: center center;
     object-fit: cover;
-    max-height: 300px;
+    height: 300px;
     border-radius: 10px;
 }
 
 .card{
     max-width: 300px;
-    min-width: 270px;
+    min-width: 260px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     padding: 10px;
+    margin: 10px 0;
     box-sizing: border-box;
     transition: transform 500ms ease;
 }
@@ -41,4 +42,11 @@
 .card .card-header .card-title{
     font-size: large;
     margin: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .animation-scale-1-1:hover{
+        transform: scale(1);
+    }
+    
 }
