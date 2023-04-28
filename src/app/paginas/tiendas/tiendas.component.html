@@ -1,1 +1,41 @@
-<p>tiendas works!</p>
+<div class="row">
+  <div class="col">
+    <img
+      class="banner_img"
+      draggable="false"
+      src="/assets/img/monkey_man2.jpg"
+      alt=""
+    />
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Tiendas</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-evenly">
+    <div class="card animation-scale-1-1" *ngFor="let tienda of tiendas">
+      <header class="card-header">
+        <img
+          class="card-img"
+          draggable="false"
+          src="/assets/img/music-store.jpg"
+          alt=""
+        />
+        <h6 class="card-title text-center">{{ tienda.nom_sede }}</h6>
+      </header>
+
+      <div class="card-content">
+        <span class="card-subtitle">Ubicación: {{ tienda.comuna }}</span>
+        <p class="card-text text-justify">
+          {{ tienda.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<span class="spacer-100"></span>
