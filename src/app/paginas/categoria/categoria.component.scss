@@ -24,7 +24,9 @@
     border: 2px solid #c8cfd1;
     border-radius: 10px;
     width: 250px;
+    height: 400px;
     padding: 0px;
+    margin: 5px;
     
 }
 
@@ -40,11 +42,21 @@ hr {
     margin: 40px;
 
 }
-.producto-container{
-    margin: 5px;
-   
-}
+
 .flex{
     display: flex;;
 }
 
+button{
+    border: none;
+    border-radius: 12px;
+    width: 80%;
+    gap: 10px;
+    height: 45px;
+    font-size: 15px;
+    color: white;
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    margin-top: 20px;
+
+}

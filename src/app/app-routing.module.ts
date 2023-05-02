@@ -8,6 +8,7 @@ import { NotFoundPageComponent } from './paginas/not-found-page/not-found-page.c
 import { CuentaComponent } from './paginas/cuenta/cuenta.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
+import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component';
 
 const SiteName = 'Music Pro';
 
@@ -52,6 +53,13 @@ const routes: Routes = [
     component: RegistroComponent,
     title: SiteName + ' - ' +'Registro'
   },
+
+  
+  {
+    path: 'instrumentos',
+    component: InstrumentosComponent,
+    title: SiteName + ' - ' +'Instrumentos'
+  },
   {
     path: '**',
     redirectTo: '404',
@@ -61,7 +69,9 @@ const routes: Routes = [
     path:'404',
     component:NotFoundPageComponent,
     title: SiteName + ' - ' +'404'
-  }
+  },
+
+
 ];
 
 @NgModule({
