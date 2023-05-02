@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert.component';
+import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert
     NotFoundPageComponent,
     LoginComponent,
     RegistroComponent,
-    CarritoAlertComponent
+    CarritoAlertComponent,
+    InstrumentosComponent
   ],
   imports: [
     BrowserModule,
