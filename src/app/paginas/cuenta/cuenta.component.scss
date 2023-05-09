@@ -1,14 +1,57 @@
+main{
+    background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1510/Electric_guitar_shop-Music_HD_Wallpaper_1366x768.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    background-color: white;
+    border-radius: 12px;
+    border: solid 2px var(--color-secondary) ;
+    margin: 30px 0 30px 0;
+}
 form{
     border:none;
-    background-color: red;
-    
+    max-width: 100%;
 }
 .flex{
     display: flex;
+
 }
 .wrap{
     flex-wrap: wrap;
 }
-input{
-    margin: 10px;
+
+input, textarea, select{
+
+    min-width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1.5px solid #38A6E7;
+    margin-bottom: 20px;
+
 }
+
+input::content{
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+input:focus{
+    border: 1.5px solid var(--color-secondary);
+    outline: none;
+}
+textarea::content{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+label{
+    width: 80%;
+}
+.archivo::placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

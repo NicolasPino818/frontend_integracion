@@ -47,7 +47,7 @@ input::placeholder{
     color: #38A6E7;
 }
 input:focus{
-    border: 1.5px solid green ;
+    border: 1.5px solid var(--color-secondary);
     outline: none;
 }
 .flex{
