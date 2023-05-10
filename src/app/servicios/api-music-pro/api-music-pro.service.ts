@@ -25,5 +25,9 @@ export class ApiMusicProService {
     return this.http.get(`${environment.musicproBaseRoute}data/`,{headers: this.headers});
   }
 
+  login({user,passw}):Observable<any>{
+    return this.http.post(`${environment.musicproBaseRoute}login/`,{user,passw},{headers: this.headers});
+  }
+
   
 }
