@@ -26,7 +26,14 @@ const routes: Routes = [
   {
     path: 'categoria',
     component: CategoriaComponent,
-    title: SiteName + ' - ' +'Categoria'
+    title: SiteName + ' - ' +'Categoria',
+    children:[
+      {
+        path: ':categoria',
+        component: InstrumentosComponent,
+        title: SiteName + ' - ' +'Instrumentos'
+      },
+    ]
   },
   {
     path: 'producto/:id',
@@ -52,13 +59,6 @@ const routes: Routes = [
     path: 'registro',
     component: RegistroComponent,
     title: SiteName + ' - ' +'Registro'
-  },
-
-  
-  {
-    path: 'instrumentos',
-    component: InstrumentosComponent,
-    title: SiteName + ' - ' +'Instrumentos'
   },
   {
     path: '**',

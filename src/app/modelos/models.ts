@@ -6,6 +6,7 @@ export const producto: IProductoItem[] = [
         id: 1,
         fotoSRC: 'https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-paris-marketplace/default/dw9539532e/images/imagenes-productos/800/MKTX/MKTXPRKXN1-001.jpg?sw=1480&sh=2000&sm=fit',
         tituloProd: 'LES PAUL STANDARD 50s GUITARRA ELECTRICA LEMON BURST EPIPHONE',
+        cat: 'guitarras',
         data:
             {
                 stockT: 25,
@@ -25,6 +26,7 @@ export const producto: IProductoItem[] = [
         id: 2,
         fotoSRC: 'https://www.solar-guitars.com/wp-content/uploads/2019/04/A2.6C-FRONT-HORIZONTAL.png.webp',
         tituloProd: 'GUITARRA SOLAR A2.6 - CARBON BLACK MATTE',
+        cat: 'guitarras',
         data:
             {
                 stockT: 8,
@@ -44,6 +46,7 @@ export const producto: IProductoItem[] = [
         id: 3,
         fotoSRC: 'https://audiomusicacl.vtexassets.com/arquivos/ids/169406-800-auto?v=637801434873000000&width=800&height=auto&aspect=true',
         tituloProd: 'Guitarra eléctrica LTD TE200 RW Telecaster - Tobacco Sunburst',
+        cat: 'guitarras',
         data:
             {
                 stockT: 8,
@@ -63,6 +66,7 @@ export const producto: IProductoItem[] = [
         id: 4,
         fotoSRC: 'https://audiomusicacl.vtexassets.com/arquivos/ids/177182-800-auto?v=637859849844200000&width=800&height=auto&aspect=true',
         tituloProd: 'Guitarra eléctrica Ibanez GRX40 - Candy Apple',
+        cat: 'guitarras',
         data:
             {
                 stockT: 13,

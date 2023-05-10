@@ -61,6 +61,12 @@
           [value]="productos.data.stockT == 0 ? 0 : 1"
         />
         <h1 class="precio">${{ productos.data.precio | number : "1.0-0" }}</h1>
+        <span *ngIf="showDolar" class="precio">${{ precioDolar }} USD</span>
+        <span
+          ><button [disabled]="disblebtn" (click)="getDolar()">
+            Ver precio en dolar
+          </button></span
+        >
         <hr />
         <div class="flex align-items-center justify-content-end">
           <button>Protege tu instrumento ></button>

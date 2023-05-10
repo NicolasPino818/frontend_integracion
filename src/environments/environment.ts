@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   transbankBaseRoute:'https://transbank.cl/api',
-  musicproBaseRoute:'https://musicpro.cl/api',
+  musicproBaseRoute:'http://127.0.0.1:8000/api/',
 };
 
 /*

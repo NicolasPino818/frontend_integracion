@@ -20,5 +20,6 @@ export interface IProductoItem{
     id: number,
     fotoSRC: string,
     tituloProd: string,
+    cat?: string,
     data: IProductoData
 }

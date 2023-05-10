@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProductoItem } from 'src/app/interfaces/interfaces';
 import { producto } from 'src/app/modelos/models';
+import { ApiMusicProService } from 'src/app/servicios/api-music-pro/api-music-pro.service';
 import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 
 @Component({
@@ -13,17 +14,21 @@ export class ProductoComponent implements OnInit {
 
   public productos!: IProductoItem;
   public ShowAddToCart: boolean = false;
+  public disblebtn = false;
+  public showDolar:boolean = false;
+  public precioDolar: number = 0;
 
   public relacionados: IProductoItem[];
 
-  constructor(private actRoute:ActivatedRoute, private router:Router, private carrito:CarritoService) { 
+  constructor(private actRoute:ActivatedRoute, private router:Router, private carrito:CarritoService, private apiMusicPro:ApiMusicProService) { 
 
     this.actRoute.params.subscribe((param) => {
 
       this.ShowAddToCart = false;
       window.scrollTo(0, 0);
-
-
+      this.showDolar = false;
+      this.precioDolar = null;
+      this.disblebtn = false;
       let id = param['id'];
 
       this.productos = producto.find((prod)=>{ 
@@ -61,6 +66,19 @@ export class ProductoComponent implements OnInit {
     }else{
       alert('Ingrese una cantidad valida >:c')
     }
+  }
+
+
+  getDolar(){
+    this.disblebtn = true;
+    this.apiMusicPro.getPrecioDolar()
+    .subscribe(response=>{
+      if(response){
+        this.showDolar = true;
+        this.precioDolar = this.productos.data.precio * response.rate
+        
+      }
+    })
   }
 
 }
