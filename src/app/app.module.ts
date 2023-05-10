@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert.component';
-import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component'
+import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component';
+import { EditarProductoModalComponent } from './componentes/editar-producto-modal/editar-producto-modal.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrume
     LoginComponent,
     RegistroComponent,
     CarritoAlertComponent,
-    InstrumentosComponent
+    InstrumentosComponent,
+    EditarProductoModalComponent
   ],
   imports: [
     BrowserModule,
