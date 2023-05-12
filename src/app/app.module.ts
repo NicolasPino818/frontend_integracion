@@ -18,6 +18,7 @@ import { RegistroComponent } from './paginas/registro/registro.component';
 import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert.component';
 import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component';
 import { EditarProductoModalComponent } from './componentes/editar-producto-modal/editar-producto-modal.component'
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,8 @@ import { EditarProductoModalComponent } from './componentes/editar-producto-moda
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { CuentaComponent } from './paginas/cuenta/cuenta.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component';
+import { LoginGuard } from './guards/login.guard';
 
 const SiteName = 'Music Pro';
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   {
     path: 'cuenta',
     component: CuentaComponent,
+    canActivate: [LoginGuard],
     title: SiteName + ' - ' +'Cuenta'
   },
   {

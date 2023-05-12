@@ -9,26 +9,27 @@
       </div>
       <div class="col contenedor2 align-items-center">
         <div class="relative">
-          <button class="boton1" [routerLink]="['/registro']">
+          <button class="boton1" [routerLink]="['/registro']" >
             Registrarse
           </button>
         </div>
-
+        <form style="border:none" [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="flex gap-40">
           <div class="flex">
-            <input type="text" placeholder="Nombre Usuario o correo" />
+            <input type="text" formControlName="user" placeholder="Nombre de Usuario" />
           </div>
 
           <div class="flex">
-            <input type="password" placeholder="Contraseña" />
+            <input type="password" formControlName="passw" placeholder="Contraseña" />
           </div>
         </div>
         <div class="asda">
           <p class="text2 text-center">
             ¿Olvidó su contraseña? <a href="">presione aquí</a>
           </p>
-          <button class="boton2">ingresar</button>
+          <button type="submit" class="boton2">ingresar</button>
         </div>
+      </form>
       </div>
     </div>
   </section>
