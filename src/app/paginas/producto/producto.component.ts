@@ -12,17 +12,21 @@ import { CarritoService } from 'src/app/servicios/carrito/carrito.service';
 })
 export class ProductoComponent implements OnInit {
 
-  public productos!: IProductoItem;
+  public productos;
   public ShowAddToCart: boolean = false;
   public disblebtn = false;
   public showDolar:boolean = false;
   public precioDolar: number = 0;
 
-  public relacionados: IProductoItem[];
+  public relacionados;
+  public categoria;
 
   constructor(private actRoute:ActivatedRoute, private router:Router, private carrito:CarritoService, private apiMusicPro:ApiMusicProService) { 
 
     this.actRoute.params.subscribe((param) => {
+
+      this.relacionados = null;
+      this.productos = null;
 
       this.ShowAddToCart = false;
       window.scrollTo(0, 0);
@@ -30,14 +34,18 @@ export class ProductoComponent implements OnInit {
       this.precioDolar = null;
       this.disblebtn = false;
       let id = param['id'];
-
-      this.productos = producto.find((prod)=>{ 
-        return prod.id == id
-      });
+      this.categoria = param['categoria'];
   
-      this.relacionados = producto.filter((prod)=>{
-        return prod.id != id;
-      });
+      this.apiMusicPro.getProductosByCategoria(this.categoria).subscribe((res)=>{
+        this.productos = res.products.find((prod)=>{ 
+          return prod.id == id
+        });
+
+        this.relacionados = res.products.filter((prod)=>{
+          return prod.id != id;
+        });
+
+      })
     })
   }
 
@@ -75,7 +83,7 @@ export class ProductoComponent implements OnInit {
     .subscribe(response=>{
       if(response){
         this.showDolar = true;
-        this.precioDolar = this.productos.data.precio * response.rate
+        this.precioDolar = this.productos.precio * response.rate
         
       }
     })

@@ -1,13 +1,17 @@
 <app-carrito-alert *ngIf="ShowAddToCart"></app-carrito-alert>
 <main>
   <section>
-    <div class="row sm-bp">
+    <div class="row sm-bp" *ngIf="productos">
       <div class="half-60 col align-items-center">
-        <img class="product-foto" [src]="productos.fotoSRC" alt="" />
+        <img
+          class="product-foto"
+          [src]="'data:image/*;base64,' + productos.imagen"
+          alt=""
+        />
         <div class="space-50">
           <div class="descripcion">
             <h1>DESCRIPCIÓN DEL PRODUCTO</h1>
-            <p>{{ productos.data.desc }}</p>
+            <p>{{ productos.desc }}</p>
           </div>
           <div class="space-50 ficha">
             <h1>FICHA TÉCNICA Y DIMENSIONES</h1>
@@ -24,12 +28,12 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>{{ productos.data.ficha.color }}</td>
-                  <td>{{ productos.data.ficha.trastes }}</td>
-                  <td>{{ productos.data.ficha.marca }}</td>
-                  <td>{{ productos.data.ficha.matCuerpo }}</td>
-                  <td>{{ productos.data.ficha.matNeck }}</td>
-                  <td>{{ productos.data.ficha.matFinger }}</td>
+                  <td>{{ productos.color }}</td>
+                  <td>{{ productos.trastes }}</td>
+                  <td>{{ productos.marca }}</td>
+                  <td>{{ productos.mat_cuerpo }}</td>
+                  <td>{{ productos.mat_neck }}</td>
+                  <td>{{ productos.mat_fingerb }}</td>
                 </tr>
               </tbody>
             </table>
@@ -37,9 +41,13 @@
         </div>
       </div>
       <div class="half-40 col sticky space-30">
-        <img class="phidden" [src]="productos.fotoSRC" alt="" />
-        <h4>{{ productos.tituloProd }}</h4>
-        <p>{{ productos.data.ficha.marca }}</p>
+        <img
+          class="phidden"
+          [src]="'data:image/*;base64,' + productos.imagen"
+          alt=""
+        />
+        <h4>{{ productos.nom_producto }}</h4>
+        <p>{{ productos.marca }}</p>
         <span class="flex align-items-center">
           <i class="bx bx-star"></i>
           <i class="bx bx-star"></i>
@@ -51,16 +59,16 @@
 
         <a>*Ver reviews</a>
         <hr />
-        <span>Stock: {{ productos.data.stockT }} unidad/es</span>
+        <span>Stock: {{ productos.stock }} unidad/es</span>
         <input
           id="cantidad_inp"
           class="cant-input"
           type="number"
-          [max]="productos.data.stockT"
+          [max]="productos.stock"
           min="0"
-          [value]="productos.data.stockT == 0 ? 0 : 1"
+          [value]="productos.stock == 0 ? 0 : 1"
         />
-        <h1 class="precio">${{ productos.data.precio | number : "1.0-0" }}</h1>
+        <h1 class="precio">${{ productos.precio | number : "1.0-0" }}</h1>
         <span *ngIf="showDolar" class="precio">${{ precioDolar }} USD</span>
         <span
           ><button [disabled]="disblebtn" (click)="getDolar()">
@@ -116,17 +124,23 @@
       <div class="row colection space-50 justify-content-center">
         <div
           *ngFor="let relacionado of relacionados"
-          [routerLink]="['/producto/' + relacionado.id]"
+          [routerLink]="[
+            '/',
+            'categoria',
+            categoria,
+            'producto',
+            relacionado.id
+          ]"
         >
           <img
-            [src]="relacionado.fotoSRC"
+            [src]="'data:image/*;base64,' + relacionado.imagen"
             alt="Foto producto"
             draggable="false"
           />
-          <h4>{{ relacionado.tituloProd }}</h4>
+          <h4>{{ relacionado.nom_producto }}</h4>
           <hr />
-          {{ relacionado.data.ficha.marca }}
-          <H3>{{ relacionado.data.precio | number : "1.0-0" }}</H3>
+          {{ relacionado.marca }}
+          <H3>{{ relacionado.precio | number : "1.0-0" }}</H3>
           <h5><del>$227.000</del></h5>
         </div>
       </div>

@@ -27,16 +27,14 @@ const routes: Routes = [
     path: 'categoria',
     component: CategoriaComponent,
     title: SiteName + ' - ' +'Categoria',
-    children:[
-      {
-        path: ':categoria',
-        component: InstrumentosComponent,
-        title: SiteName + ' - ' +'Instrumentos'
-      },
-    ]
   },
   {
-    path: 'producto/:id',
+    path: 'categoria/:categoria',
+    component: InstrumentosComponent,
+    title: SiteName + ' - ' +'Instrumentos'
+  },
+  {
+    path: 'categoria/:categoria/producto/:id',
     component: ProductoComponent,
     title: SiteName + ' - ' +'Producto'
   },
