@@ -31,8 +31,8 @@ export class CarritoComponent implements OnInit {
     if(this.carrito){
       this.carrito.forEach((e) => {
         for(let i = 0; i < inputs.length; i++){
-          if((e.id == parseInt(inputs[i].id)) && (inputs[i].valueAsNumber <=  e.data.stockT) && (e.data.cantSelec != inputs[i].valueAsNumber)){
-            e.data.cantSelec = inputs[i].valueAsNumber;
+          if((e.id == parseInt(inputs[i].id)) && (inputs[i].valueAsNumber <=  e.stock) && (e.cantSelec != inputs[i].valueAsNumber)){
+            e.cantSelec = inputs[i].valueAsNumber;
             break;
           }
         }
@@ -50,7 +50,7 @@ export class CarritoComponent implements OnInit {
     this.carrito = this.cart.getItems();
     if(this.carrito){
       this.carrito.forEach((e) => {
-        this.total += e.data.precio * e.data.cantSelec;
+        this.total += e.precio * e.cantSelec;
       });
     }
   }

@@ -1,67 +1,74 @@
-<main>
-    <section class="row justify-content-center">
-        <div class="container flex justify-content-center ">
-            <div class="flex justify-content-center">
-                <h2>Mantenedor de productos</h2>
-            </div>
-            <form class="flex wrap ">
-            <div class="col">
-                    <label for="">Añadir nuevo producto:</label>
-                    <input type="text" placeholder="Nombre Producto" required>
-                
-               
-                    <label for="">Categoria:</label>
-                    <select name="Categoria">
-                        <option value="Seleccione"></option>
-                        <option value="Guitarra">Guitarra</option>
-                        <option value="Piano">Piano</option>
-                        <option value="Bateria">Bateria</option>
-                        <option value="Violin">Violin</option>
-                    </select>
-          
-              
-                    <label for="">Marca:</label>
-                    <input type="text" placeholder="Ingrese la marca" required>
-               
-                    <label for="">Precio:</label>
-                    <input type="text" placeholder="Precio" required>
-              
-                    <label for="">Precio Oferta:</label>
-                    <input type="text" placeholder="Precio Oferta" required>
-              
-                
-                    <label for="">Imagen:</label>
-                    <input type="file" placeholder="Seleccione archivo">
-                
-                    <label for="">Stock:</label>
-                    <input type="text" placeholder="Ingrese stock" required>
-                </div>
-                <div class="col">
-                    <label for="">Fecha:</label>
-                    <input type="date" placeholder="Ingrese fecha de creación" required>
-            
-                    <label for="">Color:</label>
-                    <input type="text" placeholder="Ingrese color " required>
-               
-                    <label for="">Trastes:</label>
-                    <input type="text" placeholder="Ingrese trastes ">
-                
-                    <label for="">Material cuerpo:</label>
-                    <input type="text" placeholder="Ingresa material del cuerpo">
-              
-                    <label for="">Material brazo:</label>
-                    <input type="text" placeholder="Ingresa material brazo guitarra ">
-                
-                    <label for="">Material diapasón:</label>
-                    <input type="text" placeholder="Ingresa material diapasón">
-                
-                    <label for="">Descuento:</label>
-                    <input type="text" placeholder="Descuento">
-          
-                
-                </div>   
-            </form>
-            
-        </div>
-    </section>
-</main>
+<div class="row justify-content-center">
+  <div class="col align-items-center">
+    <button class="create" (click)="toogleModal()">
+      <h3>Crear producto <i class="bx bx-plus fs-40"></i></h3>
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col overflow-auto">
+    <table class="lista-productos">
+      <tr>
+        <td
+          colspan="6"
+          style="border-top-left-radius: 15px; border-top-right-radius: 15px"
+        >
+          Productos
+        </td>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <td>Imagen</td>
+        <td>Nombre producto</td>
+        <td>Precio</td>
+        <td>Editar Producto</td>
+        <td>Eliminar Producto</td>
+      </tr>
+      <tr
+        *ngFor="
+          let producto of productos
+            | paginate
+              : { itemsPerPage: 5, currentPage: page, totalItems: count }
+        "
+      >
+        <td>{{ producto.id }}</td>
+        <td>
+          <img
+            draggable="false"
+            [src]="'data:image/*;base64,' + producto.imagen"
+            alt=""
+          />
+        </td>
+        <td>{{ producto.nom_producto }}</td>
+        <td>${{ producto.precio | number : "1.0-0" }}</td>
+        <td class="btn editar" (click)="toogleModalPut(producto)">
+          <i class="bx bx-edit"></i>
+        </td>
+        <td class="btn desactivar" (click)="delete_product(producto.id)">
+          <i class="bx bx-x"></i>
+        </td>
+      </tr>
+    </table>
+
+    <pagination-controls
+      class="pagination"
+      (pageChange)="page = $event"
+      previousLabel="Prev"
+      nextLabel="Next"
+    ></pagination-controls>
+  </div>
+</div>
+
+<app-editar-producto-modal
+  *ngIf="showModal"
+  (close)="toogleModal()"
+  (updateEvent)="updateList()"
+></app-editar-producto-modal>
+
+<app-actualizar-producto
+  *ngIf="showPutModal"
+  [producto]="editProducto"
+  (close)="toogleModalPut()"
+  (updateEvent)="updateList()"
+></app-actualizar-producto>

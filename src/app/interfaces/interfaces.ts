@@ -1,25 +1,17 @@
 
-interface IProductoFicha{
-    color: string,
-    trastes: string,
-    marca: string,
-    matCuerpo: string,
-    matNeck: string,
-    matFinger: string
-}
-
-interface IProductoData{
-    stockT: number,
-    desc?: string,
-    precio: number,
-    ficha?: IProductoFicha,
-    cantSelec?: number,
-}
-
 export interface IProductoItem{
     id: number,
-    fotoSRC: string,
-    tituloProd: string,
-    cat?: string,
-    data: IProductoData
+    imagen: string,
+    nom_producto: string,
+    categoria?: string,
+    stock: number,
+    desc?: string,
+    precio: number,
+    cantSelec?: number,
+    color?: string,
+    trastes?: string,
+    marca?: string,
+    mat_cuerpo?: string,
+    mat_neck?: string,
+    mat_fingerb?: string
 }

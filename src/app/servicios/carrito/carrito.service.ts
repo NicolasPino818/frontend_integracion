@@ -59,8 +59,8 @@ export class CarritoService {
       let found = false;
       this.productos.forEach((i)=>{
         if (i.id == item.id) {
-          if(i.data.cantSelec < item.data.stockT){
-            i.data.cantSelec += item.data.cantSelec;
+          if(i.cantSelec < item.stock){
+            i.cantSelec += item.cantSelec;
             localStorage.setItem(CARRITO_KEY, JSON.stringify(this.productos));
           }
           found = true;
@@ -86,7 +86,7 @@ export class CarritoService {
   updateItems(items: IProductoItem[]){
 
     items.forEach((item)=>{
-      if(item.data.cantSelec == 0){
+      if(item.cantSelec == 0){
         items = items.filter((prod)=>{
           return prod.id != item.id;
         })

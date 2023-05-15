@@ -19,6 +19,8 @@ import { CarritoAlertComponent } from './componentes/carrito-alert/carrito-alert
 import { InstrumentosComponent } from './paginas/categoria/instrumentos/instrumentos.component';
 import { EditarProductoModalComponent } from './componentes/editar-producto-modal/editar-producto-modal.component'
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ActualizarProductoComponent } from './componentes/actualizar-producto/actualizar-producto.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +38,16 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
     RegistroComponent,
     CarritoAlertComponent,
     InstrumentosComponent,
-    EditarProductoModalComponent
+    EditarProductoModalComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

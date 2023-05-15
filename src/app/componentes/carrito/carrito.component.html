@@ -9,13 +9,13 @@
           <img
             class="producto-img"
             draggable="false"
-            [src]="cart.fotoSRC"
+            [src]="'data:image/*;base64,' + cart.imagen"
             alt="prod"
           />
           <div>
-            <h6 class="producto-title">{{ cart.tituloProd }}</h6>
+            <h6 class="producto-title">{{ cart.nom_producto }}</h6>
             <span class="producto-price"
-              >${{ cart.data.precio | number : "1.0-0" }}</span
+              >${{ cart.precio | number : "1.0-0" }}</span
             >
           </div>
         </div>
@@ -29,8 +29,8 @@
               [id]="cart.id"
               class="input"
               type="number"
-              [max]="cart.data.stockT"
-              [value]="cart.data.cantSelec"
+              [max]="cart.stock"
+              [value]="cart.cantSelec"
               min="1"
             />
           </span>

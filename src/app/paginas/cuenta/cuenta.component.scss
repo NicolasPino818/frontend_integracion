@@ -1,57 +1,102 @@
-main{
-    background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1510/Electric_guitar_shop-Music_HD_Wallpaper_1366x768.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.overflow-auto{
+    overflow: auto;
 }
-.container{
-    background-color: white;
-    border-radius: 12px;
-    border: solid 2px var(--color-secondary) ;
-    margin: 30px 0 30px 0;
-}
-form{
-    border:none;
-    max-width: 100%;
-}
-.flex{
+
+.create{
     display: flex;
-
-}
-.wrap{
-    flex-wrap: wrap;
-}
-
-input, textarea, select{
-
-    min-width: 300px;
-    height: 30px;
-    border-radius: 20px;
-    border: 1.5px solid #38A6E7;
-    margin-bottom: 20px;
-
-}
-
-input::content{
-    padding-left: 20px;
-    padding-right: 20px;
-
-}
-input:focus{
-    border: 1.5px solid var(--color-secondary);
-    outline: none;
-}
-textarea::content{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-label{
-    width: 80%;
-}
-.archivo::placeholder{
-    display: flex;
-    justify-content: center;
     align-items: center;
+    cursor: pointer;
+    i{
+        display: inherit;
+    }
+}
+
+.lista-productos{
+    text-transform: capitalize;
+
+    img{
+        max-width: 60px;
+        
+    }
+
+    tr{
+        td:first-of-type{
+            width: 2rem;
+            min-width: 2rem;
+        }
+    }
+    td{
+        text-align: center;
+        width: 10rem;
+        padding: 1rem;
+        min-width: 7rem;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td.btn{
+        padding: 0;
+        
+        cursor: pointer;
+        font-size:40px;
+
+        &.desactivar{
+            background-color: var(--color-danger);
+            transition: background-color 300ms ease-in-out;
+            &:hover{
+                background-color: rgb(255, 100, 100);
+            }
+        }
+        &.editar{
+            background-color: var(--color-success);
+            transition: background-color 300ms ease-in-out;
+            &:hover{
+                background-color: rgb(61, 47, 255);
+            }
+        }
+    }
+    tr:first-of-type{
+        color: var(--color-light);
+        background: linear-gradient(45deg, #615eff,#A568FC) !important;
+        
+        td{
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 40px;
+        }
+    }
+    tr:nth-child(odd){
+        background: rgb(129, 198, 255);
+    }
+    tr:nth-child(even){
+        background: rgb(223, 223, 223);
+    }
 }
 
 
+/*Paginacion*/
+.pagination{
+    margin-top: 15px;
+    text-align: center;
+    
+}
+.pagination ::ng-deep .ngx-pagination .disabled{
+    color: rgb(0, 0, 0) !important;
+    cursor: not-allowed !important;
+}
+
+.pagination ::ng-deep .ngx-pagination .current,.btn-info {
+    background: var(--color-secondary) !important;
+    border: transparent !important;
+    border-radius: 3px !important;
+}
+
+.pagination ::ng-deep .ngx-pagination a, .ngx-pagination button{
+    color: #000000 !important;
+}
+
+.pagination ::ng-deep .ngx-pagination a:hover, .ngx-pagination button:hover {
+    border-radius: 3px;
+    text-decoration: none;
+}
+/*Paginacion*/
