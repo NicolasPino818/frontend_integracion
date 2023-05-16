@@ -61,6 +61,14 @@ export class ActualizarProductoComponent implements OnInit {
         Validators.maxLength(150)
       ]),
     })
+
+    this.apiMusicPro.getCategorias().subscribe((res)=>{
+      this.categorias = res.categorias
+    })
+
+    this.apiMusicPro.getMarcas().subscribe((res)=>{
+      this.marcas = res.marcas
+    })
   }
 
   closeModal(){
