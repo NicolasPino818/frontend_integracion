@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 const LOGIN_KEY = 'STATUS';
 
@@ -7,7 +8,7 @@ const LOGIN_KEY = 'STATUS';
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
 
 
@@ -15,5 +16,9 @@ export class LoginService {
     localStorage.setItem(LOGIN_KEY, status+'')
   }
 
+  logOut(){
+    localStorage.removeItem(LOGIN_KEY)
+    this.router.navigate(['/']);
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiMusicProService } from 'src/app/servicios/api-music-pro/api-music-pro.service';
+import { LoginService } from 'src/app/servicios/loginService/login.service';
 
 @Component({
   selector: 'app-cuenta',
@@ -17,7 +18,7 @@ export class CuentaComponent implements OnInit {
   showModal = false;
   showPutModal = false;
 
-  constructor(private apiMusicPro:ApiMusicProService) { }
+  constructor(private apiMusicPro:ApiMusicProService,private login:LoginService) { }
 
   ngOnInit(): void {
 
@@ -53,6 +54,10 @@ export class CuentaComponent implements OnInit {
 
     this.showPutModal = !this.showPutModal;
 
+  }
+
+  logOut(){
+    this.login.logOut();
   }
 
 }
